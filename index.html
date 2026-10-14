@@ -1,76 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
   <title>Abrham Melesse Birru — Full Stack & Cloud Engineer</title>
-  <meta name="description" content="Full Stack Developer and Cloud Infrastructure Engineer based in Addis Ababa, Ethiopia. BSc Computer Science, Qiyas Cloud & Network training, Ministry of Innovation experience." />
-  <meta property="og:title" content="Abrham Melesse Birru — Full Stack & Cloud Engineer" />
-  <meta property="og:description" content="Full Stack Developer and Cloud Infrastructure Engineer based in Addis Ababa, Ethiopia." />
-  <meta name="theme-color" content="#0f2557" />
+  <meta name="description" content="Full Stack Developer and Cloud Infrastructure Engineer. I build production-grade web applications and reliable cloud systems. Based in Addis Ababa, Ethiopia."/>
+  <meta property="og:title" content="Abrham Melesse Birru — Full Stack & Cloud Engineer"/>
+  <meta property="og:description" content="I build production-grade web applications and reliable cloud systems."/>
+  <meta name="theme-color" content="#0f2557"/>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy:    { DEFAULT: '#0f2557', light: '#1a3a7a', dark: '#091840' },
-            brand:   { DEFAULT: '#2563eb', light: '#3b82f6', dark: '#1d4ed8' },
-            cloud:   { DEFAULT: '#059669', light: '#10b981', dark: '#047857' },
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
-    }
+    tailwind.config={theme:{extend:{colors:{navy:{DEFAULT:'#0f2557',light:'#1a3a7a'},brand:{DEFAULT:'#2563eb',dark:'#1d4ed8'},cloud:{DEFAULT:'#059669'}},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
-    html { scroll-behavior: smooth; }
-    .gradient-text { background: linear-gradient(135deg, #2563eb, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-bg { background: linear-gradient(135deg, #0f2557 0%, #1a3a7a 50%, #0f4c75 100%); }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
-    .skill-bar { transition: width 1.2s ease; }
-    .nav-link { position: relative; }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#2563eb; transition:width 0.3s; }
-    .nav-link:hover::after { width:100%; }
-    .tag-dev   { background:#dbeafe; color:#1d4ed8; }
-    .tag-cloud { background:#d1fae5; color:#047857; }
-    .tag-db    { background:#ede9fe; color:#6d28d9; }
-    .tag-tools { background:#fef3c7; color:#92400e; }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-    .fade-up { animation: fadeUp 0.7s ease forwards; }
-    section { scroll-margin-top: 72px; }
+    html{scroll-behavior:smooth}
+    .hero-bg{background:linear-gradient(135deg,#0f2557 0%,#1a3a7a 50%,#0f4c75 100%)}
+    .card-hover{transition:transform .2s ease,box-shadow .2s ease}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#2563eb;transition:width .3s}
+    .nav-link:hover::after{width:100%}
+    .tag-dev{background:#dbeafe;color:#1d4ed8}
+    .tag-cloud{background:#d1fae5;color:#047857}
+    .tag-db{background:#ede9fe;color:#6d28d9}
+    .tag-tools{background:#fef3c7;color:#92400e}
+    .tag-health{background:#fce7f3;color:#9d174d}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .7s ease forwards}
+    section{scroll-margin-top:72px}
+    .impact-num{font-size:2.5rem;font-weight:800;line-height:1}
   </style>
 </head>
 <body class="font-sans bg-slate-50 text-slate-800 antialiased">
 
+<!-- SVG ICON DEFS (reusable) -->
+<svg style="display:none">
+  <symbol id="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+  </symbol>
+  <symbol id="ico-github" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+  </symbol>
+  <symbol id="ico-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+  </symbol>
+  <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+  </symbol>
+  <symbol id="ico-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+  </symbol>
+  <symbol id="ico-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+  </symbol>
+  <symbol id="ico-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+  </symbol>
+  <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 6L9 17l-5-5"/>
+  </symbol>
+  <symbol id="ico-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+  </symbol>
+  <symbol id="ico-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+  </symbol>
+  <symbol id="ico-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+  </symbol>
+  <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </symbol>
+  <symbol id="ico-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+  </symbol>
+  <symbol id="ico-graduate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </symbol>
+  <symbol id="ico-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+  </symbol>
+  <symbol id="ico-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+  </symbol>
+  <symbol id="ico-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+    <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+  </symbol>
+  <symbol id="ico-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+  </symbol>
+  <symbol id="ico-wifi-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0119 12.55M5 12.55a10.94 10.94 0 015.17-2.39M10.71 5.05A16 16 0 0122.56 9M1.42 9a15.91 15.91 0 014.7-2.88M8.53 16.11a6 6 0 016.95 0M12 20h.01"/>
+  </symbol>
+  <symbol id="ico-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+  </symbol>
+  <symbol id="ico-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+  </symbol>
+  <symbol id="ico-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+  </symbol>
+</svg>
+
 <!-- ── NAV ─────────────────────────────────────────────── -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 transition-all">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="#home" class="font-bold text-navy text-lg tracking-tight">AM<span class="text-brand">.</span></a>
+    <a href="#home" class="font-bold text-navy text-lg">AM<span class="text-brand">.</span></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-      <a href="#about"      class="nav-link hover:text-navy transition-colors">About</a>
-      <a href="#skills"     class="nav-link hover:text-navy transition-colors">Skills</a>
-      <a href="#projects"   class="nav-link hover:text-navy transition-colors">Projects</a>
+      <a href="#work"       class="nav-link hover:text-navy transition-colors">Work</a>
+      <a href="#approach"   class="nav-link hover:text-navy transition-colors">Approach</a>
       <a href="#experience" class="nav-link hover:text-navy transition-colors">Experience</a>
       <a href="#contact"    class="nav-link hover:text-navy transition-colors">Contact</a>
     </div>
     <a href="mailto:abrhammelesse5@gmail.com"
        class="hidden md:inline-flex items-center gap-2 bg-brand text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-dark transition-colors">
       Hire Me
+      <svg class="w-4 h-4"><use href="#ico-arrow"/></svg>
     </a>
-    <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100" onclick="toggleMenu()">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
+    <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 text-navy" onclick="toggleMenu()">
+      <svg class="w-5 h-5"><use href="#ico-menu"/></svg>
     </button>
   </div>
   <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-slate-600">
-    <a href="#about"      onclick="toggleMenu()" class="hover:text-brand">About</a>
-    <a href="#skills"     onclick="toggleMenu()" class="hover:text-brand">Skills</a>
-    <a href="#projects"   onclick="toggleMenu()" class="hover:text-brand">Projects</a>
+    <a href="#work"       onclick="toggleMenu()" class="hover:text-brand">Work</a>
+    <a href="#approach"   onclick="toggleMenu()" class="hover:text-brand">Approach</a>
     <a href="#experience" onclick="toggleMenu()" class="hover:text-brand">Experience</a>
     <a href="#contact"    onclick="toggleMenu()" class="hover:text-brand">Contact</a>
   </div>
@@ -78,494 +136,663 @@
 
 <!-- ── HERO ────────────────────────────────────────────── -->
 <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
-  <div class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
-    <div class="fade-up">
-      <span class="inline-block bg-white/10 text-blue-200 text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-6">
-        Available for opportunities
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="max-w-3xl fade-up">
+      <span class="inline-flex items-center gap-2 bg-white/10 text-blue-200 text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-8">
+        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+        Available for opportunities — Addis Ababa, Ethiopia
       </span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
         Abrham<br/>Melesse Birru
       </h1>
-      <p class="text-xl md:text-2xl font-medium mb-2">
-        <span class="text-blue-300">Full Stack Developer</span>
-        <span class="text-slate-400 mx-3">&</span>
-        <span class="text-emerald-400">Cloud Infrastructure Engineer</span>
+      <p class="text-xl md:text-2xl text-blue-200 font-medium mb-4">
+        Full Stack Developer <span class="text-slate-400 mx-2">/</span> Cloud Infrastructure Engineer
       </p>
-      <p class="text-slate-300 text-base mt-4 mb-8 max-w-lg leading-relaxed">
-        BSc Computer Science · Qiyas Cloud & Network Training · Based in Addis Ababa, Ethiopia.
-        I build production-grade web applications and design reliable cloud infrastructure.
+      <p class="text-slate-300 text-lg leading-relaxed mb-10 max-w-2xl">
+        I build production-ready web applications with real authentication, real databases, real tests, and real deployments — not just demos. BSc Computer Science (3.78 GPA) + Qiyas Cloud & Network Infrastructure training.
       </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#projects"
-           class="bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-          View My Work
-        </a>
-        <a href="#contact"
-           class="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-          Get In Touch
+      <div class="flex flex-wrap gap-4 mb-16">
+        <a href="#work"
+           class="bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2">
+          See My Work
+          <svg class="w-4 h-4"><use href="#ico-arrow"/></svg>
         </a>
         <a href="https://github.com/bham-lab" target="_blank"
            class="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <svg class="w-4 h-4"><use href="#ico-github"/></svg>
           GitHub
         </a>
+        <a href="#contact"
+           class="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+          Contact Me
+        </a>
       </div>
-    </div>
 
-    <!-- Stats -->
-    <div class="grid grid-cols-2 gap-4 fade-up">
-      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-        <p class="text-4xl font-extrabold text-white">3.78</p>
-        <p class="text-blue-200 text-sm mt-1">GPA — Computer Science</p>
-      </div>
-      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-        <p class="text-4xl font-extrabold text-white">2+</p>
-        <p class="text-blue-200 text-sm mt-1">Years Experience</p>
-      </div>
-      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-        <p class="text-4xl font-extrabold text-white">97</p>
-        <p class="text-blue-200 text-sm mt-1">Lighthouse Performance</p>
-      </div>
-      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10">
-        <p class="text-4xl font-extrabold text-white">24</p>
-        <p class="text-blue-200 text-sm mt-1">Weeks Full Stack Training</p>
+      <!-- Proof metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 border border-white/10">
+          <div class="impact-num text-white">97</div>
+          <div class="text-blue-200 text-xs mt-1 font-medium">Lighthouse Performance<br/>on deployed app</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 border border-white/10">
+          <div class="impact-num text-white">21</div>
+          <div class="text-blue-200 text-xs mt-1 font-medium">Automated tests<br/>passing in CI/CD</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 border border-white/10">
+          <div class="impact-num text-white">4</div>
+          <div class="text-blue-200 text-xs mt-1 font-medium">Production apps<br/>built & deployed</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-5 border border-white/10">
+          <div class="impact-num text-white">3.78</div>
+          <div class="text-blue-200 text-xs mt-1 font-medium">GPA — Computer<br/>Science degree</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT ───────────────────────────────────────────── -->
-<section id="about" class="py-24 bg-white">
+<!-- ── WHAT I ACTUALLY DO ─────────────────────────────── -->
+<section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <span class="text-brand text-sm font-semibold tracking-widest uppercase">About Me</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2 mb-6">
-          Building systems that scale.<br/>Engineering solutions that last.
-        </h2>
-        <p class="text-slate-600 leading-relaxed mb-4">
-          I'm a Computer Science graduate from Kotebe University of Education (GPA 3.78) with professional experience as a Junior Programmer at the Ministry of Innovation and Technology and specialized Cloud & Network Infrastructure training at Qiyas Network.
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand"><use href="#ico-layers"/></svg>
+        </div>
+        <h3 class="font-bold text-navy text-lg mb-3">Full Stack Applications</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          I build complete web applications — React frontends with real-time state, Node.js APIs with proper auth and validation, PostgreSQL databases with migrations, and automated CI/CD pipelines. Not tutorials: working products deployed to real infrastructure.
         </p>
-        <p class="text-slate-600 leading-relaxed mb-6">
-          My goal is to bridge full stack development with cloud infrastructure — building web applications that are not only functional and beautiful, but also deployed on reliable, scalable, and secure cloud systems.
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="w-12 h-12 rounded-xl bg-cloud/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-cloud"><use href="#ico-cloud"/></svg>
+        </div>
+        <h3 class="font-bold text-navy text-lg mb-3">Cloud & Infrastructure</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Trained in cloud computing, network infrastructure, and system administration at Qiyas Network. I understand not just how to write code, but how to deploy, monitor, and maintain it on real servers — bridging the gap between development and operations.
         </p>
-        <div class="flex flex-wrap gap-3">
-          <span class="flex items-center gap-1.5 text-sm text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full">
-            📍 Addis Ababa, Ethiopia
-          </span>
-          <span class="flex items-center gap-1.5 text-sm text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full">
-            🟢 Available immediately
-          </span>
-          <span class="flex items-center gap-1.5 text-sm text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full">
-            🌐 English · Amharic
-          </span>
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="w-12 h-12 rounded-xl bg-navy/10 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-navy"><use href="#ico-shield"/></svg>
+        </div>
+        <h3 class="font-bold text-navy text-lg mb-3">Security-First Development</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          I implement auth correctly: bcrypt password hashing (12 rounds), JWT with expiry, httpOnly token handling, Zod validation on every input, Helmet security headers, and rate limiting on auth routes. Security is built in, not bolted on.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ─────────────────────────────────────────── -->
+<section id="work" class="py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-16">
+      <span class="text-brand text-sm font-semibold tracking-widest uppercase">Projects</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2 mb-3">What I've Built</h2>
+      <p class="text-slate-500 max-w-xl">Each project shows a specific problem I solved, the technical decisions I made, and the measurable result.</p>
+    </div>
+
+    <!-- TASKR — Featured -->
+    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden mb-8 card-hover">
+      <div class="hero-bg p-8 md:p-10">
+        <div class="flex items-start justify-between flex-wrap gap-4">
+          <div>
+            <span class="bg-emerald-400/20 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">Flagship Project · Fully Deployed</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mt-4">Taskr — Task Management Platform</h3>
+            <p class="text-blue-200 mt-1 text-sm">React + Node.js + PostgreSQL + WebSockets + CI/CD</p>
+          </div>
+          <div class="flex gap-3 flex-wrap">
+            <a href="https://taskr-frontend-blue.vercel.app" target="_blank"
+               class="bg-white text-navy font-semibold text-sm px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors flex items-center gap-2">
+              Live App
+              <svg class="w-3.5 h-3.5"><use href="#ico-external"/></svg>
+            </a>
+            <a href="https://github.com/bham-lab/tasker-frontend" target="_blank"
+               class="border border-white/30 text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4"><use href="#ico-github"/></svg>
+              Frontend
+            </a>
+            <a href="https://github.com/bham-lab/taskr-api" target="_blank"
+               class="border border-white/30 text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4"><use href="#ico-github"/></svg>
+              API
+            </a>
+          </div>
         </div>
       </div>
-      <div class="space-y-4">
-        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl p-2 bg-brand/10 flex items-center justify-center flex-shrink-0 text-xl">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5842 3.09053C11.8483 2.96982 12.1517 2.96982 12.4158 3.09053L22.4158 7.66195C22.7717 7.82467 23 8.18006 23 8.57143C23 8.96279 22.7717 9.31819 22.4158 9.4809L20 10.5853V16.4469C20 16.648 19.9495 16.8682 19.8221 17.0728C19.4914 17.6042 17.1726 21 12 21C6.82744 21 4.50856 17.6042 4.17785 17.0728C4.0505 16.8682 4 16.648 4 16.4469V10.5853L1.58424 9.4809C1.2283 9.31819 1 8.96279 1 8.57143C1 8.18006 1.2283 7.82467 1.58424 7.66195L11.5842 3.09053ZM6 11.4995V16.1994C6.48987 16.8789 8.31354 19 12 19C15.6865 19 17.5101 16.8789 18 16.1994V11.4995L12.4158 14.0523C12.1517 14.173 11.8483 14.173 11.5842 14.0523L6 11.4995ZM4.40524 8.57143L5.41576 9.03338L12 12.0433L18.5842 9.03338L19.5948 8.57143L12 5.09954L4.40524 8.57143ZM23.5 11.5C23.5 12.3284 22.8284 13 22 13C21.1716 13 20.5 12.3284 20.5 11.5C20.5 10.6716 21.1716 10 22 10C22.8284 10 23.5 10.6716 23.5 11.5ZM23 14.5C23 13.9477 22.5523 13.5 22 13.5C21.4477 13.5 21 13.9477 21 14.5V20C21 20.5523 21.4477 21 22 21C22.5523 21 23 20.5523 23 20V14.5Z" fill="#000000"></path> </g></svg>
-            </div>
-            <div>
-              <p class="font-semibold text-navy">BSc Computer Science</p>
-              <p class="text-sm text-slate-500">Kotebe University of Education · 2023 · GPA 3.78</p>
-            </div>
+
+      <div class="p-8 md:p-10 grid md:grid-cols-2 gap-10">
+        <!-- Problem & Solution -->
+        <div class="space-y-6">
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">The Challenge</p>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Build a task management app that feels instant across multiple devices simultaneously, with secure per-user data isolation, cloud file storage, automated email flows, and zero manual deployment steps.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Key Technical Decisions</p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span>Used <strong>Socket.io personal rooms</strong> so updates push to only the correct user's devices — not broadcast to everyone</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span><strong>Optimistic UI updates</strong> for toggle and delete — UI responds instantly, rolls back if the server rejects</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span><strong>Prisma ORM</strong> with typed schema and versioned migrations — no raw SQL, no data loss risk on schema changes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span><strong>DELETE with ownership in one query</strong>: <code class="bg-slate-100 px-1 rounded text-xs">WHERE id=$1 AND user_id=$2</code> — avoids a separate ownership check and prevents data leaks</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span><strong>Password reset tokens hashed</strong> before storage — if the database leaks, tokens are useless to an attacker</span>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 p-2 rounded-xl bg-cloud/10 flex items-center justify-center flex-shrink-0 text-xl"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503 19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8 8.9375 3 11.2001 3 13.6493Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
-            <div>
-              <p class="font-semibold text-navy">Cloud & Network Infrastructure</p>
-              <p class="text-sm text-slate-500">Qiyas Network · 2026 · Practical certification</p>
+
+        <!-- Results -->
+        <div class="space-y-6">
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Verifiable Results</p>
+            <div class="grid grid-cols-3 gap-3 mb-4">
+              <div class="bg-slate-50 rounded-xl p-3 text-center">
+                <div class="text-2xl font-extrabold text-brand">97</div>
+                <div class="text-xs text-slate-500 mt-0.5">Performance</div>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-3 text-center">
+                <div class="text-2xl font-extrabold text-cloud">100</div>
+                <div class="text-xs text-slate-500 mt-0.5">Best Practices</div>
+              </div>
+              <div class="bg-slate-50 rounded-xl p-3 text-center">
+                <div class="text-2xl font-extrabold text-navy">21</div>
+                <div class="text-xs text-slate-500 mt-0.5">Tests Passing</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl p-2 bg-brand/10 flex items-center justify-center flex-shrink-0 text-xl">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 11V6C9 4.34315 10.3431 3 12 3C13.6569 3 15 4.34315 15 6V10.9673M10.4 21H13.6C15.8402 21 16.9603 21 17.816 20.564C18.5686 20.1805 19.1805 19.5686 19.564 18.816C20 17.9603 20 16.8402 20 14.6V12.2C20 11.0799 20 10.5198 19.782 10.092C19.5903 9.71569 19.2843 9.40973 18.908 9.21799C18.4802 9 17.9201 9 16.8 9H7.2C6.0799 9 5.51984 9 5.09202 9.21799C4.71569 9.40973 4.40973 9.71569 4.21799 10.092C4 10.5198 4 11.0799 4 12.2V14.6C4 16.8402 4 17.9603 4.43597 18.816C4.81947 19.5686 5.43139 20.1805 6.18404 20.564C7.03968 21 8.15979 21 10.4 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </div>
-            <div>
-              <p class="font-semibold text-navy">Junior Programmer</p>
-              <p class="text-sm text-slate-500">Ministry of Innovation & Technology · Nov 2024 – Nov 2025</p>
-            </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">What It Demonstrates</p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span>End-to-end ownership from design to deployed production URL</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span>GitHub Actions CI/CD — tests must pass before any deployment</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span>All 12 security headers correct (verified with <code class="bg-slate-100 px-1 rounded text-xs">curl -I</code>)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>
+                <span>Rate limiting, CORS restriction, Zod validation on every input</span>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">React 18</span>
+            <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Node.js</span>
+            <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Express</span>
+            <span class="tag-db text-xs font-semibold px-2.5 py-1 rounded-full">PostgreSQL</span>
+            <span class="tag-db text-xs font-semibold px-2.5 py-1 rounded-full">Prisma ORM</span>
+            <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Socket.io</span>
+            <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">GitHub Actions</span>
+            <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">Vercel + Railway</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Grid: other 3 projects -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- PMS -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover">
+        <div class="bg-gradient-to-br from-violet-600 to-purple-700 p-6">
+          <span class="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full">Healthcare · TypeScript</span>
+          <h3 class="text-lg font-bold text-white mt-3">Patient Management System</h3>
+          <div class="flex gap-2 mt-3">
+            <a href="https://github.com/bham-lab/pms" target="_blank"
+               class="border border-white/30 text-white text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5"><use href="#ico-github"/></svg> Code
+            </a>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">What I built</p>
+            <p class="text-slate-600 text-sm leading-relaxed">A TypeScript-first patient management system with Next.js App Router. Added Sentry for production error monitoring and edge instrumentation — because real systems need observability, not just functionality.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">Why Sentry?</p>
+            <p class="text-slate-600 text-sm">"A medical system that fails silently is dangerous. Sentry alerts on errors before users report them."</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-dev text-xs font-semibold px-2 py-0.5 rounded-full">Next.js</span>
+            <span class="tag-dev text-xs font-semibold px-2 py-0.5 rounded-full">TypeScript</span>
+            <span class="tag-tools text-xs font-semibold px-2 py-0.5 rounded-full">Sentry</span>
+            <span class="tag-dev text-xs font-semibold px-2 py-0.5 rounded-full">shadcn/ui</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover">
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-6">
+          <span class="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full">Healthcare · Full Stack</span>
+          <h3 class="text-lg font-bold text-white mt-3">Medical Platform</h3>
+          <div class="flex gap-2 mt-3">
+            <a href="https://github.com/bham-lab/medical" target="_blank"
+               class="border border-white/30 text-white text-xs font-semibold px-3 py-1.5 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5"><use href="#ico-github"/></svg> Code
+            </a>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">What I built</p>
+            <p class="text-slate-600 text-sm leading-relaxed">A Next.js medical application with Prisma database integration, authentication middleware, and shadcn/ui component system. Built using AI-assisted development workflows with Claude and Windsurf agents.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">Approach</p>
+            <p class="text-slate-600 text-sm">Used AI tooling as a collaborator, not a crutch — reviewing generated code, making architectural decisions, and maintaining code quality throughout.</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-dev text-xs font-semibold px-2 py-0.5 rounded-full">Next.js</span>
+            <span class="tag-db text-xs font-semibold px-2 py-0.5 rounded-full">Prisma</span>
+            <span class="tag-dev text-xs font-semibold px-2 py-0.5 rounded-full">TypeScript</span>
+            <span class="tag-dev text-xs font-semibold px-2 py-0.5 rounded-full">shadcn/ui</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Office Portal -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-hover">
+        <div class="bg-gradient-to-br from-emerald-600 to-teal-700 p-6">
+          <span class="bg-white/20 text-white text-xs font-bold px-2 py-0.5 rounded-full">Infrastructure · Deployment</span>
+          <h3 class="text-lg font-bold text-white mt-3">Digital Office Navigation Portal</h3>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">What I did</p>
+            <p class="text-slate-600 text-sm leading-relaxed">Deployed and configured a production web portal from scratch — server provisioning, Nginx configuration, backend/frontend deployment, process management, and troubleshooting under real operational conditions.</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1.5">What it proves</p>
+            <p class="text-slate-600 text-sm">I can take an application from code to live production environment — not just write code, but own the full deployment lifecycle.</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-cloud text-xs font-semibold px-2 py-0.5 rounded-full">Linux Server</span>
+            <span class="tag-cloud text-xs font-semibold px-2 py-0.5 rounded-full">Nginx</span>
+            <span class="tag-tools text-xs font-semibold px-2 py-0.5 rounded-full">Deployment</span>
+            <span class="tag-cloud text-xs font-semibold px-2 py-0.5 rounded-full">Networking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNICAL APPROACH ─────────────────────────────── -->
+<section id="approach" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="mb-16">
+      <span class="text-brand text-sm font-semibold tracking-widest uppercase">How I Think</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2">Technical Approach</h2>
+      <p class="text-slate-500 mt-3 max-w-xl">These aren't skills I list — they're principles I apply in every project.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand"><use href="#ico-shield"/></svg>
+          </div>
+          <h3 class="font-bold text-navy">Security is not optional</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          In Taskr I enforced ownership at the database query level (<code class="bg-white border border-slate-200 px-1.5 py-0.5 rounded text-xs">WHERE id=$1 AND user_id=$2</code>), not just in middleware. I hashed password reset tokens before storage. I rate-limited auth routes to 5 requests per 15 minutes. These decisions came from understanding what breaks in production, not just what works in development.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-cloud/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-cloud"><use href="#ico-activity"/></svg>
+          </div>
+          <h3 class="font-bold text-navy">Measure before you ship</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          I run Lighthouse audits before every deployment. I write integration tests against a real test database — not mocks. I check production headers with <code class="bg-white border border-slate-200 px-1.5 py-0.5 rounded text-xs">curl -I</code> to verify security configuration. The 97 Lighthouse score on Taskr isn't luck — it came from lazy loading routes, optimizing images, and measuring the impact of each change.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-navy/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-navy"><use href="#ico-layers"/></svg>
+          </div>
+          <h3 class="font-bold text-navy">Architecture before code</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          I separate concerns deliberately. In Taskr: the service layer handles API calls, context manages state, components only render. In the backend: routes call controllers, controllers use services, middleware handles cross-cutting concerns. This isn't about following patterns — it's about writing code that other developers (and future me) can understand without reading every line.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand"><use href="#ico-cloud"/></svg>
+          </div>
+          <h3 class="font-bold text-navy">Development and deployment together</h3>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          My cloud and network training changes how I write code. I think about what happens when the server restarts, when the database connection drops, when a request takes 10 seconds. Taskr's API validates environment variables on startup and exits with a clear error if any are missing — because silent failures in production are worse than loud failures in development.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── SKILLS ──────────────────────────────────────────── -->
-<section id="skills" class="py-24 bg-slate-50">
+<section class="py-20 bg-slate-50">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <span class="text-brand text-sm font-semibold tracking-widest uppercase">Expertise</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2">Skills & Technologies</h2>
-      <p class="text-slate-500 mt-3 max-w-xl mx-auto">Two specializations, one engineer. Full stack development meets cloud infrastructure.</p>
+    <div class="mb-12">
+      <span class="text-brand text-sm font-semibold tracking-widest uppercase">Skills</span>
+      <h2 class="text-3xl font-bold text-navy mt-2">Technologies — Applied in Production</h2>
     </div>
-
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- Dev Skills -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
+      <div class="bg-white rounded-2xl p-8 border border-slate-100">
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
-            <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          </div>
-          <h3 class="text-lg font-bold text-navy">Full Stack Development</h3>
+          <svg class="w-5 h-5 text-brand"><use href="#ico-code"/></svg>
+          <h3 class="font-bold text-navy">Full Stack Development</h3>
         </div>
         <div class="space-y-4">
-          <div class="space-y-3">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Frontend</p>
+          <div>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Frontend</p>
             <div class="flex flex-wrap gap-2">
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">React 18</span>
+              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Next.js</span>
+              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Tailwind CSS</span>
-              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">JavaScript ES6+</span>
-              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">HTML5 / CSS3</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">React Router</span>
-              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Zod / RHF</span>
+              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Zod + RHF</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Axios</span>
+              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">shadcn/ui</span>
             </div>
           </div>
-          <div class="space-y-3">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Backend</p>
+          <div>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Backend</p>
             <div class="flex flex-wrap gap-2">
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
-              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Express.js</span>
+              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Express</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">REST APIs</span>
-              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">JWT Auth</span>
+              <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">JWT + bcrypt</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Socket.io</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Python</span>
               <span class="tag-dev text-xs font-semibold px-3 py-1 rounded-full">Java</span>
             </div>
           </div>
-          <div class="space-y-3">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Database</p>
+          <div>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Database</p>
             <div class="flex flex-wrap gap-2">
               <span class="tag-db text-xs font-semibold px-3 py-1 rounded-full">PostgreSQL</span>
               <span class="tag-db text-xs font-semibold px-3 py-1 rounded-full">Prisma ORM</span>
               <span class="tag-db text-xs font-semibold px-3 py-1 rounded-full">SQL</span>
-              <span class="tag-db text-xs font-semibold px-3 py-1 rounded-full">Database Design</span>
+              <span class="tag-db text-xs font-semibold px-3 py-1 rounded-full">Data Modeling</span>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Cloud Skills -->
-      <div class="bg-white rounded-2xl p-8 border border-slate-100 card-hover">
+      <div class="bg-white rounded-2xl p-8 border border-slate-100">
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-xl bg-cloud/10 flex items-center justify-center">
-            <svg class="w-5 h-5 text-cloud" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-          </div>
-          <h3 class="text-lg font-bold text-navy">Cloud & Infrastructure</h3>
+          <svg class="w-5 h-5 text-cloud"><use href="#ico-server"/></svg>
+          <h3 class="font-bold text-navy">Cloud & Infrastructure</h3>
         </div>
         <div class="space-y-4">
-          <div class="space-y-3">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cloud & Networking</p>
+          <div>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Cloud & Networking</p>
             <div class="flex flex-wrap gap-2">
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Cloud Computing</span>
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Network Infrastructure</span>
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">System Administration</span>
+              <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Linux / Windows Server</span>
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Network Config</span>
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Infrastructure Security</span>
-              <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Linux / Windows Server</span>
             </div>
           </div>
-          <div class="space-y-3">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">DevOps & Deployment</p>
+          <div>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">DevOps & Deployment</p>
             <div class="flex flex-wrap gap-2">
               <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">GitHub Actions CI/CD</span>
               <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Vercel</span>
               <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Railway</span>
-              <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Git</span>
+              <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Nginx</span>
               <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Cloudinary</span>
-              <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Server Management</span>
+              <span class="tag-tools text-xs font-semibold px-3 py-1 rounded-full">Sentry</span>
             </div>
           </div>
-          <div class="space-y-3">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Security & Monitoring</p>
+          <div>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Security & Quality</p>
             <div class="flex flex-wrap gap-2">
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Helmet.js</span>
               <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Rate Limiting</span>
-              <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">HTTPS / SSL</span>
-              <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Network Troubleshooting</span>
+              <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">HTTPS / TLS</span>
+              <span class="tag-cloud text-xs font-semibold px-3 py-1 rounded-full">Jest + Supertest</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROJECTS ─────────────────────────────────────────── -->
-<section id="projects" class="py-24 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <span class="text-brand text-sm font-semibold tracking-widest uppercase">Portfolio</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2">Featured Projects</h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Project 1: Taskr -->
-      <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden card-hover col-span-full">
-        <div class="hero-bg p-8 md:p-10">
-          <div class="flex items-center justify-between flex-wrap gap-4">
-            <div>
-              <span class="bg-emerald-400/20 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full">Featured Project</span>
-              <h3 class="text-2xl md:text-3xl font-bold text-white mt-3">✓ Taskr</h3>
-              <p class="text-blue-200 mt-1">Full-Stack Task Management Platform</p>
-            </div>
-            <div class="flex gap-3">
-              <a href="https://taskr-frontend-blue.vercel.app" target="_blank"
-                 class="bg-white text-navy font-semibold text-sm px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
-                Live Demo →
-              </a>
-              <a href="https://github.com/bham-lab/tasker-frontend" target="_blank"
-                 class="border border-white/30 text-white font-semibold text-sm px-4 py-2 rounded-lg hover:bg-white/10 transition-colors">
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="p-8 md:p-10 bg-white">
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <p class="text-slate-600 leading-relaxed mb-6">
-                A production-grade full-stack application with real-time task syncing, JWT authentication, cloud deployment, and automated CI/CD. Achieved 97 Lighthouse Performance score and 100 Best Practices.
-              </p>
-              <ul class="space-y-2 text-sm text-slate-600">
-                <li class="flex items-start gap-2"><span class="text-brand mt-0.5">▸</span> Real-time updates via WebSocket — changes sync instantly across all devices</li>
-                <li class="flex items-start gap-2"><span class="text-brand mt-0.5">▸</span> JWT auth with bcrypt, email verification, password reset flow</li>
-                <li class="flex items-start gap-2"><span class="text-brand mt-0.5">▸</span> PostgreSQL + Prisma ORM with soft deletes and pagination</li>
-                <li class="flex items-start gap-2"><span class="text-brand mt-0.5">▸</span> Security hardened — Helmet, rate limiting, Zod validation, CORS</li>
-                <li class="flex items-start gap-2"><span class="text-brand mt-0.5">▸</span> GitHub Actions CI/CD — auto-deploys on every push to main</li>
-              </ul>
-            </div>
-            <div class="space-y-3">
-              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tech Stack</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">React 18</span>
-                <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
-                <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Node.js</span>
-                <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Express</span>
-                <span class="tag-db text-xs font-semibold px-2.5 py-1 rounded-full">PostgreSQL</span>
-                <span class="tag-db text-xs font-semibold px-2.5 py-1 rounded-full">Prisma ORM</span>
-                <span class="tag-dev text-xs font-semibold px-2.5 py-1 rounded-full">Socket.io</span>
-                <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">GitHub Actions</span>
-                <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">Vercel</span>
-                <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">Railway</span>
-                <span class="tag-cloud text-xs font-semibold px-2.5 py-1 rounded-full">Cloudinary</span>
-              </div>
-              <div class="grid grid-cols-3 gap-3 mt-4">
-                <div class="bg-slate-50 rounded-xl p-3 text-center">
-                  <p class="text-2xl font-extrabold text-brand">97</p>
-                  <p class="text-xs text-slate-500">Performance</p>
-                </div>
-                <div class="bg-slate-50 rounded-xl p-3 text-center">
-                  <p class="text-2xl font-extrabold text-cloud">100</p>
-                  <p class="text-xs text-slate-500">Best Practices</p>
-                </div>
-                <div class="bg-slate-50 rounded-xl p-3 text-center">
-                  <p class="text-2xl font-extrabold text-navy">21</p>
-                  <p class="text-xs text-slate-500">Tests Passing</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2: Office Navigation -->
-      <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden card-hover">
-        <div class="bg-gradient-to-br from-emerald-600 to-teal-700 p-8">
-          <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">Infrastructure</span>
-          <h3 class="text-xl font-bold text-white mt-3">Digital Office Navigation Portal</h3>
-          <p class="text-emerald-100 text-sm mt-1">Deployment & Infrastructure Project</p>
-        </div>
-        <div class="p-8 bg-white">
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Deployed and configured a full web-based portal including application setup, server configuration, backend/frontend deployment, process management, and infrastructure troubleshooting.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag-cloud text-xs font-semibold px-2.5 py-1 rounded-full">Server Admin</span>
-            <span class="tag-cloud text-xs font-semibold px-2.5 py-1 rounded-full">Nginx</span>
-            <span class="tag-cloud text-xs font-semibold px-2.5 py-1 rounded-full">Linux</span>
-            <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">Deployment</span>
-            <span class="tag-tools text-xs font-semibold px-2.5 py-1 rounded-full">Networking</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: Coming Soon -->
-      <div class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-[280px] card-hover">
-        <div class="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-        </div>
-        <h3 class="font-bold text-navy mb-2">Next Project</h3>
-        <p class="text-sm text-slate-500 max-w-xs">Containerizing Taskr with Docker, Nginx reverse proxy, and Redis caching — DevOps infrastructure project coming soon.</p>
-        <span class="mt-4 text-xs text-brand font-semibold bg-brand/10 px-3 py-1 rounded-full">In Progress</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── EXPERIENCE ───────────────────────────────────────── -->
-<section id="experience" class="py-24 bg-slate-50">
+<section id="experience" class="py-24 bg-white">
   <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center mb-16">
+    <div class="mb-16">
       <span class="text-brand text-sm font-semibold tracking-widest uppercase">Background</span>
       <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2">Experience & Education</h2>
     </div>
 
-    <div class="relative">
-      <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 -translate-x-px"></div>
+    <div class="space-y-6">
 
-      <!-- Experience 1 -->
-      <div class="relative flex md:justify-end mb-12 md:pr-12">
-        <div class="ml-16 md:ml-0 md:w-5/12 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm card-hover">
-          <div class="absolute left-3.5 md:left-auto md:right-[-38px] w-5 h-5 bg-brand rounded-full border-4 border-white shadow"></div>
-          <span class="text-xs font-semibold text-brand bg-brand/10 px-2 py-0.5 rounded-full">Nov 2024 – Nov 2025</span>
-          <h3 class="font-bold text-navy mt-2">Junior Programmer</h3>
-          <p class="text-sm text-slate-500 mb-3">Ministry of Innovation and Technology · Addis Ababa</p>
-          <ul class="space-y-1.5 text-sm text-slate-600">
-            <li class="flex items-start gap-2"><span class="text-brand">▸</span> Developed and maintained web-based applications and software solutions</li>
-            <li class="flex items-start gap-2"><span class="text-brand">▸</span> Worked across frontend, backend, databases, APIs, and system administration</li>
-            <li class="flex items-start gap-2"><span class="text-brand">▸</span> Applied networking and infrastructure knowledge to support reliable IT systems</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Experience 2 -->
-      <div class="relative flex md:justify-start mb-12 md:pl-12">
-        <div class="ml-16 md:ml-0 md:w-5/12 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm card-hover">
-          <div class="absolute left-3.5 md:left-[-38px] w-5 h-5 bg-cloud rounded-full border-4 border-white shadow"></div>
-          <span class="text-xs font-semibold text-cloud bg-cloud/10 px-2 py-0.5 rounded-full">Jul – Sep 2022</span>
-          <h3 class="font-bold text-navy mt-2">IT Intern</h3>
-          <p class="text-sm text-slate-500 mb-3">Debretabor University</p>
-          <ul class="space-y-1.5 text-sm text-slate-600">
-            <li class="flex items-start gap-2"><span class="text-cloud">▸</span> Supported day-to-day IT and technical operations</li>
-            <li class="flex items-start gap-2"><span class="text-cloud">▸</span> Assisted with computer systems, networking, and troubleshooting</li>
-            <li class="flex items-start gap-2"><span class="text-cloud">▸</span> Provided technical support for infrastructure-related issues</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Education -->
-      <div class="relative flex md:justify-end mb-12 md:pr-12">
-        <div class="ml-16 md:ml-0 md:w-5/12 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm card-hover">
-          <div class="absolute left-3.5 md:left-auto md:right-[-38px] w-5 h-5 bg-navy rounded-full border-4 border-white shadow"></div>
-          <span class="text-xs font-semibold text-navy bg-navy/10 px-2 py-0.5 rounded-full">2023</span>
-          <h3 class="font-bold text-navy mt-2">BSc Computer Science</h3>
-          <p class="text-sm text-slate-500 mb-1">Kotebe University of Education</p>
-          <p class="text-sm font-semibold text-brand">GPA: 3.78 / 4.00</p>
-        </div>
-      </div>
-
-      <!-- Qiyas -->
-      <div class="relative flex md:justify-start md:pl-12">
-        <div class="ml-16 md:ml-0 md:w-5/12 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm card-hover">
-          <div class="absolute left-3.5 md:left-[-38px] w-5 h-5 bg-cloud rounded-full border-4 border-white shadow"></div>
-          <span class="text-xs font-semibold text-cloud bg-cloud/10 px-2 py-0.5 rounded-full">2026</span>
-          <h3 class="font-bold text-navy mt-2">Cloud & Network Infrastructure</h3>
-          <p class="text-sm text-slate-500 mb-2">Qiyas Network · ID: qiyas-2026-004337</p>
-          <div class="flex flex-wrap gap-1.5 text-xs">
-            <span class="tag-cloud px-2 py-0.5 rounded font-medium">Cloud Computing</span>
-            <span class="tag-cloud px-2 py-0.5 rounded font-medium">Networking</span>
-            <span class="tag-cloud px-2 py-0.5 rounded font-medium">System Admin</span>
-            <span class="tag-cloud px-2 py-0.5 rounded font-medium">Security</span>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 card-hover">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-brand"><use href="#ico-briefcase"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between flex-wrap gap-2">
+              <div>
+                <h3 class="font-bold text-navy text-lg">Junior Programmer</h3>
+                <p class="text-slate-500 text-sm">Ministry of Innovation and Technology · Addis Ababa</p>
+              </div>
+              <span class="text-xs font-semibold text-brand bg-brand/10 px-3 py-1 rounded-full">Nov 2024 – Nov 2025</span>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Developed and maintained web-based applications serving government operations</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Worked across the full stack — frontend, backend, databases, APIs, and system administration</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Applied networking and infrastructure knowledge to support reliable IT systems</li>
+            </ul>
           </div>
         </div>
       </div>
+
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 card-hover">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-cloud/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-cloud"><use href="#ico-cloud"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between flex-wrap gap-2">
+              <div>
+                <h3 class="font-bold text-navy text-lg">Cloud & Network Infrastructure Training</h3>
+                <p class="text-slate-500 text-sm">Qiyas Network · ID: qiyas-2026-004337</p>
+              </div>
+              <span class="text-xs font-semibold text-cloud bg-cloud/10 px-3 py-1 rounded-full">2026</span>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Cloud computing concepts, infrastructure design, and deployment models</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Network configuration, troubleshooting, and infrastructure security</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>System administration for Linux and Windows Server environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 card-hover">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-navy/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-navy"><use href="#ico-graduate"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between flex-wrap gap-2">
+              <div>
+                <h3 class="font-bold text-navy text-lg">BSc Computer Science</h3>
+                <p class="text-slate-500 text-sm">Kotebe University of Education</p>
+              </div>
+              <span class="text-xs font-semibold text-navy bg-navy/10 px-3 py-1 rounded-full">2023</span>
+            </div>
+            <p class="mt-3 text-brand font-bold">GPA: 3.78 / 4.00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 card-hover">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-cloud/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-cloud"><use href="#ico-terminal"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between flex-wrap gap-2">
+              <div>
+                <h3 class="font-bold text-navy text-lg">IT Intern</h3>
+                <p class="text-slate-500 text-sm">Debretabor University</p>
+              </div>
+              <span class="text-xs font-semibold text-cloud bg-cloud/10 px-3 py-1 rounded-full">Jul – Sep 2022</span>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Supported IT operations, networking, and computer system maintenance</li>
+              <li class="flex items-start gap-2"><svg class="w-4 h-4 text-cloud mt-0.5 flex-shrink-0"><use href="#ico-check"/></svg>Provided technical support and resolved infrastructure-related issues</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ── CONTACT ──────────────────────────────────────────── -->
-<section id="contact" class="py-24 bg-white">
+<section id="contact" class="py-24 bg-slate-50">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12">
       <span class="text-brand text-sm font-semibold tracking-widest uppercase">Contact</span>
       <h2 class="text-3xl md:text-4xl font-bold text-navy mt-2">Let's Work Together</h2>
-      <p class="text-slate-500 mt-3">Available immediately for Cloud, DevOps, Full Stack, or Infrastructure roles.</p>
+      <p class="text-slate-500 mt-3">Available immediately. Open to full-time, contract, or remote roles in Cloud, DevOps, Full Stack, or Infrastructure.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 gap-6">
       <div class="space-y-4">
         <a href="mailto:abrhammelesse5@gmail.com"
-           class="flex items-center gap-4 bg-slate-50 hover:bg-brand/5 border border-slate-100 rounded-2xl p-5 transition-colors group">
+           class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-5 hover:border-brand/30 hover:shadow-md transition-all group">
           <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-brand"><use href="#ico-mail"/></svg>
           </div>
           <div>
             <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Email</p>
-            <p class="font-semibold text-navy group-hover:text-brand transition-colors">abrhammelesse5@gmail.com</p>
+            <p class="font-semibold text-navy group-hover:text-brand transition-colors text-sm">abrhammelesse5@gmail.com</p>
           </div>
         </a>
 
         <a href="tel:+251946465917"
-           class="flex items-center gap-4 bg-slate-50 hover:bg-brand/5 border border-slate-100 rounded-2xl p-5 transition-colors group">
+           class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-5 hover:border-brand/30 hover:shadow-md transition-all group">
           <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <svg class="w-5 h-5 text-brand"><use href="#ico-phone"/></svg>
           </div>
           <div>
             <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Phone</p>
-            <p class="font-semibold text-navy group-hover:text-brand transition-colors">+251 946 465 917</p>
+            <p class="font-semibold text-navy group-hover:text-brand transition-colors text-sm">+251 946 465 917</p>
           </div>
         </a>
 
         <a href="https://github.com/bham-lab" target="_blank"
-           class="flex items-center gap-4 bg-slate-50 hover:bg-brand/5 border border-slate-100 rounded-2xl p-5 transition-colors group">
+           class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-5 hover:border-brand/30 hover:shadow-md transition-all group">
           <div class="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <svg class="w-5 h-5 text-brand"><use href="#ico-github"/></svg>
           </div>
           <div>
             <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">GitHub</p>
-            <p class="font-semibold text-navy group-hover:text-brand transition-colors">github.com/bham-lab</p>
+            <p class="font-semibold text-navy group-hover:text-brand transition-colors text-sm">github.com/bham-lab</p>
           </div>
         </a>
 
-        <div class="flex items-center gap-4 bg-slate-50 border border-slate-100 rounded-2xl p-5">
+        <div class="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl p-5">
           <div class="w-12 h-12 rounded-xl bg-cloud/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-cloud" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg class="w-5 h-5 text-cloud"><use href="#ico-location"/></svg>
           </div>
           <div>
             <p class="text-xs text-slate-400 font-medium uppercase tracking-wide">Location</p>
-            <p class="font-semibold text-navy">Addis Ababa, Ethiopia</p>
+            <p class="font-semibold text-navy text-sm">Addis Ababa, Ethiopia</p>
+            <p class="text-xs text-slate-400 mt-0.5">Open to remote roles globally</p>
           </div>
         </div>
       </div>
 
-      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8">
-        <h3 class="font-bold text-navy mb-1">Open to opportunities in:</h3>
-        <p class="text-sm text-slate-500 mb-6">Full-time, contract, or remote roles</p>
-        <ul class="space-y-3 text-sm text-slate-600">
+      <div class="bg-white border border-slate-100 rounded-2xl p-8">
+        <h3 class="font-bold text-navy mb-1 text-lg">Seeking roles in:</h3>
+        <p class="text-sm text-slate-500 mb-6">I bring both development depth and infrastructure breadth.</p>
+        <ul class="space-y-4">
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-cloud rounded-full flex-shrink-0"></span>
-            Cloud Infrastructure Engineer
+            <div class="w-2 h-2 bg-cloud rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Cloud Infrastructure Engineer</p>
+              <p class="text-xs text-slate-400">Cloud architecture, deployment, reliability</p>
+            </div>
           </li>
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-cloud rounded-full flex-shrink-0"></span>
-            Junior DevOps Engineer
+            <div class="w-2 h-2 bg-cloud rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Junior DevOps Engineer</p>
+              <p class="text-xs text-slate-400">CI/CD, infrastructure automation, monitoring</p>
+            </div>
           </li>
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-brand rounded-full flex-shrink-0"></span>
-            Full Stack Developer
+            <div class="w-2 h-2 bg-brand rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Full Stack Developer</p>
+              <p class="text-xs text-slate-400">React, Node.js, PostgreSQL, real-time</p>
+            </div>
           </li>
           <li class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-brand rounded-full flex-shrink-0"></span>
-            Backend Developer (Node.js)
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="w-2 h-2 bg-navy rounded-full flex-shrink-0"></span>
-            Systems Administrator + Developer
+            <div class="w-2 h-2 bg-brand rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="font-semibold text-navy text-sm">Backend / API Engineer</p>
+              <p class="text-xs text-slate-400">REST APIs, auth, databases, security</p>
+            </div>
           </li>
         </ul>
         <a href="mailto:abrhammelesse5@gmail.com"
            class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white font-semibold py-3 px-6 rounded-xl transition-colors">
-          Send Me a Message
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          Get In Touch
+          <svg class="w-4 h-4"><use href="#ico-arrow"/></svg>
         </a>
       </div>
     </div>
@@ -576,23 +803,19 @@
 <footer class="hero-bg py-10">
   <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-blue-200">
     <p class="font-bold text-white">Abrham Melesse Birru</p>
-    <p>Full Stack Developer · Cloud Infrastructure Engineer · Addis Ababa, Ethiopia</p>
+    <p class="text-center">Full Stack Developer · Cloud Infrastructure Engineer · Addis Ababa</p>
     <p>© 2026 · Built with HTML & Tailwind</p>
   </div>
 </footer>
 
 <script>
-  function toggleMenu() {
-    const m = document.getElementById('mobile-menu')
-    m.classList.toggle('hidden')
+  function toggleMenu(){
+    document.getElementById('mobile-menu').classList.toggle('hidden')
   }
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    const menu = document.getElementById('mobile-menu')
-    const btn  = document.getElementById('menu-btn')
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.add('hidden')
-    }
+  document.addEventListener('click',(e)=>{
+    const m=document.getElementById('mobile-menu')
+    const b=document.getElementById('menu-btn')
+    if(!m.contains(e.target)&&!b.contains(e.target)) m.classList.add('hidden')
   })
 </script>
 </body>
