@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    html{scroll-behavior:smooth}
+    .hero-bg{background:linear-gradient(135deg,#0f2557 0%,#1a3a7a 50%,#0f4c75 100%)}
+    .card-hover{transition:transform .2s ease,box-shadow .2s ease}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#2563eb;transition:width .3s}
+    .nav-link:hover::after{width:100%}
+    .tag-dev{background:#dbeafe;color:#1d4ed8}
+    .tag-cloud{background:#d1fae5;color:#047857}
+    .tag-db{background:#ede9fe;color:#6d28d9}
+    .tag-tools{background:#fef3c7;color:#92400e}
+    .tag-health{background:#fce7f3;color:#9d174d}
+    @keyframes fadeUp{from{transform:translateY(16px)}to{transform:translateY(0)}}
+    .fade-up{animation:fadeUp .6s ease-out both}
+    section{scroll-margin-top:72px}
+    .impact-num{font-size:2.5rem;font-weight:800;line-height:1}
+  
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+:focus-visible{outline:2px solid #2563eb;outline-offset:2px}

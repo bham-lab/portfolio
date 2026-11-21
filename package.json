@@ -1,0 +1,11 @@
+{
+  "name": "abrham-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Abrham Melesse Birru — Full Stack Developer / Cloud Infrastructure Engineer",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "npx serve dist -l 4173"
+  },
+  "devDependencies": { "tailwindcss": "^3.4.17" }
+}
